@@ -14,7 +14,7 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 app.get("/api/test", (req, res) => {
-	res.send("Hello World!");
+	res.send("ОНО РАБОТАЕТ!!!!!!!");
 });
 
 app.listen(port, () => {
