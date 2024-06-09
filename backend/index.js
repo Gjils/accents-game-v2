@@ -6,7 +6,7 @@ const app = express();
 const port = 5000;
 
 const corsOptions = {
-	origin: true, // Укажите разрешенные домены
+	origin: ["http://89.169.54.5"], // Укажите разрешенные домены
 	credentials: true,
 	optionsSuccessStatus: 204,
 };
@@ -14,9 +14,7 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 app.get("/test", (req, res) => {
-	res.send("Hello World!").set({
-		"Access-Control-Allow-Origin": "*",
-	});
+	res.send("Hello World!");
 });
 
 app.listen(port, () => {
