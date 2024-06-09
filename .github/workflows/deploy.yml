@@ -25,8 +25,7 @@ jobs:
           private_key: ${{secrets.SSH_PRIVATE_KEY}}
           command: |
             DIR=${{ secrets.PROJECT_FOLDER }}
-            if [ ! -d "$DIR" ]; then
-                git clone https://github.com/Gjils/accents-game-v2 $DIR
+            test ! -d "$DIR" && git clone https://github.com/Gjils/accents-game-v2 "$DIR"
             fi
             cd $DIR
             git checkout main;
