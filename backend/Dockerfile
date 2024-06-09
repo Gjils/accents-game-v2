@@ -17,7 +17,7 @@ RUN yarn
 COPY . .
 
 # Starting our application
-RUN yarn run start
+CMD ["yarn", "run", "start"]
 
 # Exposing server port
 EXPOSE 5000
