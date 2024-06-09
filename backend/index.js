@@ -14,7 +14,9 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 app.get("/", (req, res) => {
-	res.send("Hello World!");
+	res.send("Hello World!").set({
+		"Access-Control-Allow-Origin": "*",
+	});
 });
 
 app.listen(port, () => {
