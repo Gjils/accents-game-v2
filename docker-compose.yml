@@ -10,7 +10,7 @@ services:
 
   frontend:
     env_file:
-      - path: ./env.local
+      - path: ./.env.local
         required: true
     container_name: frontend
     build: ./frontend
