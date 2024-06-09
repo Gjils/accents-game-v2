@@ -6,7 +6,7 @@ const app = express();
 const port = 5000;
 
 const corsOptions = {
-	origin: ["http://localhost:3000", "http://89.169.54.5"], // Укажите разрешенные домены
+	origin: true, // Укажите разрешенные домены
 	methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
 	credentials: true,
 	optionsSuccessStatus: 204,
