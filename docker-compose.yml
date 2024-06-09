@@ -5,8 +5,8 @@ services:
     build: ./backend
     ports:
       - "5000:5000"
-    # networks:
-    #   - network
+    networks:
+      - network
 
   frontend:
     container_name: frontend
@@ -16,9 +16,9 @@ services:
     stdin_open: true
     depends_on:
       - backend
-    # networks:
-    #   - network
+    networks:
+      - network
 
-# networks:
-#   network:
-#     driver: bridge
+networks:
+  network:
+    driver: bridge

@@ -13,10 +13,10 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
-app.get("/test", (req, res) => {
+app.get("/api/test", (req, res) => {
 	res.send("Hello World!");
 });
 
 app.listen(port, () => {
-	console.log(`Example app listening on port ${port}`);
+	console.log(`Hello World!`);
 });
