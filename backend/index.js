@@ -7,15 +7,13 @@ const port = 5000;
 
 const corsOptions = {
 	origin: true, // Укажите разрешенные домены
-	methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
 	credentials: true,
-	optionsSuccessStatus: 204,
 };
 
 app.use(cors(corsOptions));
 
-app.get("/", (req, res) => {
-	res.send("Hello World!");
+app.get("/", cors(), (req, res) => {
+	res.json({ msg: "Hello World!" });
 });
 
 app.listen(port, () => {
