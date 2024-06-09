@@ -5,11 +5,15 @@ import cors from "cors";
 const app = express();
 const port = 5000;
 
-let corsOptions = {
-	origin: ["http://frontend:3000"],
+const corsOptions = {
+  // origin: ['http://localhost:3000', 'http://89.169.54.5', 'http://frontend:3000'], // Укажите разрешенные домены
+  origin: ['http://frontend:3000'],
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true,
+  optionsSuccessStatus: 204
 };
 
-app.use(cors());
+app.use(cors(corsOptions));
 
 app.get("/", (req, res) => {
 	res.send("Hello World!");
