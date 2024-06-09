@@ -9,13 +9,12 @@ services:
       - network
 
   frontend:
-    env_file:
-      - path: ./.env.local
-        required: true
     container_name: frontend
     build: ./frontend
     ports:
       - "80:80"
+    env_file:
+      - ./frontend/.env.local
     stdin_open: true
     depends_on:
       - backend
