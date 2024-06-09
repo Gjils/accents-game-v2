@@ -13,7 +13,7 @@ RUN yarn build
 
 FROM nginx:alpine
 
-COPY --from=0 /app /usr/share/nginx/html
+COPY --from=0 /app/dist /usr/share/nginx/html
 
 CMD ["nginx", "-g", "daemon off;"]
 
