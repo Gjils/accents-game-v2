@@ -13,7 +13,7 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
-app.get("/", (req, res) => {
+app.get("/test", (req, res) => {
 	res.send("Hello World!").set({
 		"Access-Control-Allow-Origin": "*",
 	});
