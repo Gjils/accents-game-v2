@@ -8,12 +8,13 @@ const port = 5000;
 const corsOptions = {
 	origin: true, // Укажите разрешенные домены
 	credentials: true,
+	optionsSuccessStatus: 204,
 };
 
 app.use(cors(corsOptions));
 
-app.get("/", cors(), (req, res) => {
-	res.json({ msg: "Hello World!" });
+app.get("/", (req, res) => {
+	res.send("Hello World!");
 });
 
 app.listen(port, () => {

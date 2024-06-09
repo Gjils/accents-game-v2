@@ -8,7 +8,6 @@ ENV NODE_ENV development
 WORKDIR /backend
 
 COPY package.json package.json
-COPY yarn.lock yarn.lock
 
 # Installing dependencies
 RUN yarn
