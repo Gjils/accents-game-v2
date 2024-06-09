@@ -24,9 +24,9 @@ jobs:
           user: ${{secrets.SSH_USER}}
           private_key: ${{secrets.SSH_PRIVATE_KEY}}
           command: |
-            DIR=${{ secrets.PROJECT_FOLDER }}
-            test ! -d "$DIR" && git clone https://github.com/Gjils/accents-game-v2 "$DIR"
-            cd $DIR
+            DIR=${{ secrets.PROJECT_FOLDER }};
+            test ! -d "$DIR" && git clone https://github.com/Gjils/accents-game-v2 "$DIR";
+            cd $DIR;
             git checkout main;
             git pull;
             docker build -t frontend .
