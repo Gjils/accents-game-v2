@@ -7,7 +7,7 @@ const port = 5000;
 
 const corsOptions = {
   // origin: ['http://localhost:3000', 'http://89.169.54.5', 'http://frontend:3000'], // Укажите разрешенные домены
-  origin: ['http://frontend:3000'],
+  origin: ['http://frontend:80'],
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
   optionsSuccessStatus: 204
