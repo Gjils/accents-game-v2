@@ -26,7 +26,6 @@ jobs:
           command: |
             DIR=${{ secrets.PROJECT_FOLDER }}
             test ! -d "$DIR" && git clone https://github.com/Gjils/accents-game-v2 "$DIR"
-            fi
             cd $DIR
             git checkout main;
             git pull;
