@@ -1,0 +1,29 @@
+name: "accents-game CI"
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Run command on remote server
+        uses: D3rHase/ssh-command-action@v0.2.2
+        with:
+          host: ${{secrets.SSH_HOST}}
+          user: ${{secrets.SSH_USER}}
+          private_key: ${{secrets.SSH_PRIVATE_KEY}}
+          command: |
+            DIR=${{ secrets.PROJECT_FOLDER }}
+            if [ ! -d "$DIR" ]; then
+                git clone https://github.com/Gjils/accents-game-v2 $DIR
+            fi
+            cd $DIR
+            git checkout main;
+            git pull;
+            docker build -t frontend .
+            docker run -dp 89.169.54.5:80:80 frontend
+            docker system prune --all --force;
